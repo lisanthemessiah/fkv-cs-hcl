@@ -6,34 +6,9 @@ This repository contains the code and resources for our paper on facial kinship 
 
 Facial Kinship Verification, a challenging task in computer vision, faces significant challenges due to subtle interclass differences and high intraclass variations. This research introduces a novel approach that leverages supervised contrastive learning techniques with a focus on strategic sample selection. We propose a method that combines a custom batch sampling strategy with Hard Contrastive Loss (HCL) to enhance the discriminative power of learned facial features for kinship recognition.
 
-## Key Features
-
-- Custom batch sampling strategy for diverse and informative training batches
-- Integration of Hard Contrastive Loss (HCL) to focus on challenging negative examples
-- Competitive performance on the Families in the Wild (FIW) dataset
-- Strong performance on complex tasks such as tri-subject verification and search and retrieval
-
-## Results
-
-Our method achieves:
-- Average accuracy of 81.99% on the kinship verification task
-- State-of-the-art performance on tri-subject verification with 86.0% average accuracy
-- Competitive performance on search and retrieval tasks
-
-## Methodology
-
-1. Custom Batch Sampler: Creates diverse and balanced batches with unique family representations
-2. Hard Contrastive Loss (HCL): Focuses on the most challenging negative samples
-3. Fine-tuned face recognition model (AdaFace ResNet-101)
-
-## Experiments and Ablation Studies
-
-We conducted extensive experiments and ablation studies to evaluate the impact of:
-- Sampling methods (sequential, random, custom)
-- Hard Contrastive Loss
-- Temperature parameter tuning
-
 ## Reproducing Results
+
+_WIP. See [Scripts](#Scripts) section for now. Soon I will add instructions for reproducing the results presented in our paper._
 
 To reproduce the results presented in our paper:
 
@@ -57,12 +32,72 @@ To reproduce the results presented in our paper:
 
 Detailed instructions, code, and additional resources necessary for reproducing our results will be added to this repository upon publication of our paper.
 
+## Scripts
+
+This repository includes various utility scripts to help with experiment management, data processing, and result analysis.
+
+### Python Scripts
+
+#### Experiment Analysis
+- `fg2025/compute_t1_accuracy.py`: Computes accuracy metrics for Task 1 (kinship verification) from Guild experiment data
+- `fg2025/compute_t2t3_accuracy.py`: Computes metrics for Tasks 2 (tri-subject verification) and 3 (search & retrieval)
+- `fg2025/kinfacew_results.py`: Processes and analyzes results from KinFaceW dataset experiments
+
+### Shell Scripts
+
+#### Environment Setup
+- `setup.sh`: Sets up Python virtual environment using uv and installs dependencies
+- `install_zellij.sh`: Installs Zellij terminal multiplexer for improved workflow
+- `download_assets.sh`: Downloads required datasets and model weights
+
+#### Experiment Management
+- `run_scl_t1.sh`: Runs Task 1 experiments with specified configurations
+- `run_scl_t2.sh`: Executes Task 2 (tri-subject verification) experiments
+- `run_scl_t3.sh`: Manages Task 3 (search & retrieval) experiments
+- `run_kinface.sh`: Handles KinFaceW dataset experiments
+- `run_scl_stages.sh`: Orchestrates different stages of SCL model training
+
+#### Guild.ai Utilities
+- `guild_queue.sh`: Manages experiment queues across multiple GPUs
+- `fix_opref.sh`: Fixes operation references in Guild runs
+- `clean_checkpoints.sh`: Cleans up model checkpoints to save disk space
+- `restart_experiment.sh`: Automatically restarts stopped or pending experiments
+
+### Usage Examples
+
+#### Setup
+
+```bash
+./scripts/shell/setup.sh
+```
+
+This script will install the necessary dependencies and set up the virtual environment.
+
+#### Download Assets
+
+```bash
+./scripts/shell/download_assets.sh
+```
+
+This script will download the necessary repositories, datasets, and model weights.
+
+#### Run experiments
+
+TODO.
+
+## Notebooks
+
+The `notebooks` directory contains three analysis notebooks:
+
+### Analysis Notebooks
+- `plot_guild_experiments.ipynb`: Analyzes and visualizes experiment results from Guild.ai runs, including hyperparameter effects and accuracy metrics
+- `sampling_analysis.ipynb`: Evaluates the custom kinship sampling strategy, analyzing sampling distributions and scoring patterns
+- `tsne.ipynb`: Implements t-SNE visualization for analyzing learned feature embeddings from the model
+
+
 ## Future Work
 
-- Explore larger batch sizes and more sophisticated negative sampling strategies
-- Investigate advanced feature transformation techniques
-- Develop multi-task learning frameworks
-- Address dataset challenges for imbalanced data and rare kinship relations
+TODO
 
 ## Citation
 

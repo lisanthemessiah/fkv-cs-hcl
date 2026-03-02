@@ -39,9 +39,9 @@ This repository includes various utility scripts to help with experiment managem
 ### Python Scripts
 
 #### Experiment Analysis
-- `fg2025/compute_t1_accuracy.py`: Computes accuracy metrics for Task 1 (kinship verification) from Guild experiment data
-- `fg2025/compute_t2t3_accuracy.py`: Computes metrics for Tasks 2 (tri-subject verification) and 3 (search & retrieval)
-- `fg2025/kinfacew_results.py`: Processes and analyzes results from KinFaceW dataset experiments
+- `analysis/compute_t1_accuracy.py`: Computes accuracy metrics for Task 1 (kinship verification) from Guild experiment data
+- `analysis/compute_t2t3_accuracy.py`: Computes metrics for Tasks 2 (tri-subject verification) and 3 (search & retrieval)
+- `analysis/kinfacew_results.py`: Processes and analyzes results from KinFaceW dataset experiments
 
 ### Shell Scripts
 
@@ -103,8 +103,17 @@ TODO
 
 If you find this work useful in your research, please consider citing:
 
-```
-[Citation information will be added upon publication]
+```bibtex
+@inproceedings{barbosa2026kinship,
+  author    = {Warley Barbosa and Thiago Vieira},
+  title     = {Kinship Verification with Custom Sampling and Hard Contrastive Loss},
+  booktitle = {Proceedings of the 21st International Conference on Computer Vision Theory and Applications ({VISAPP})},
+  volume    = {2},
+  pages     = {398--405},
+  year      = {2026},
+  isbn      = {978-989-758-804-4},
+  issn      = {2184-4321},
+}
 ```
 
 ## Contact
